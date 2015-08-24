@@ -18,7 +18,7 @@ printchar:
 finish:	jmp finish		; Loop in place to cause the bootloader to hang
 
 
-msg:	db 'Hello, bootsector!', 0 ; This is the null-terminated string we want to print
+msg:	db 'Hello, boot sector!', 0 ; This is the null-terminated string we want to print
 
 times (510) - ($ - $$)  db 0 	; pad the rest of the bootloader with zeros through byte 510
 

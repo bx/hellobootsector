@@ -1,5 +1,5 @@
-This is a simple bootsector implementation for systems with BIOS-style bootloaders.
-All it does is print 'Hello, bootsector!' and hang.
+This is a simple boot sector implementation for systems with BIOS-style bootloaders.
+All it does is print 'Hello, boot sector!' and hang.
 
 It should live in the first sector/MBR of a bootable disk. The build tools will take care of this for you and run it via qemu.
 
