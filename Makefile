@@ -1,7 +1,7 @@
 BOOTIMG := hello.img
-SRC := hello.s
+SRC := hello.asm
 BOOTIMGGREEN := hello_green.img
-SRCGREEN := hello_green.s
+SRCGREEN := hello_green.asm
 
 $(BOOTIMG): $(SRC)
 	nasm -f bin -o $(BOOTIMG) $(SRC)
