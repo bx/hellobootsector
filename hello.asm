@@ -14,7 +14,7 @@ printchar:
 	mov ah, 0x0e ; Move the magic value 0x0e to the register ah
 	int 0x10     ; Invokes the "Video Services" interrupt
 	             ; Because the magic value 0x0e is in register ah Video Services
-		         ; Will write a character in TTY mode and it will print character
+		     ; Will write a character in TTY mode and it will print character
 	             ; Specified by register al (which we set earlier)
 	jmp printchar; Loop to print the next character
 
