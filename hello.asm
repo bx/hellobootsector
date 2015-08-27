@@ -7,8 +7,6 @@ mov ebx, msg  ; Load address of message into a general purpose register.
 mov ah, 0x3   ; Setup "Get cursor position & shape" interrupt args
 int 0x10      ; Causes current page number to be stored in bh
 printchar:
-
-	
 	mov al, [ebx]; Move next character in message to al register 
 	inc ebx	     ; Increment the address of the next byte to print
 	cmp al, 0    ; Have we passed the end of the string we are printing?
