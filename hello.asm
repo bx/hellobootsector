@@ -6,7 +6,7 @@ mov ebx, msg  ; Load address of message into a general purpose register.
               ; ebx will hold the address of the next byte in the message to print 
 mov ah, 0x3   ; Setup "Get cursor position & shape" interrupt args
 int 0x10      ; Causes current page number to be stored in bh
-printchar:
+printnextchar:
 	mov al, [ebx]; Move next character in message to al register 
 	inc ebx	     ; Increment the address of the next byte to print
 	cmp al, 0    ; Have we passed the end of the string we are printing?
@@ -16,7 +16,7 @@ printchar:
 	             ; Because the magic value 0x0e is in register ah Video Services
 		     ; Will write a character in TTY mode and it will print character
 	             ; Specified by register al (which we set earlier)
-	jmp printchar; Loop to print the next character
+	jmp printnextchar; Loop to print the next character
 
 finish:	jmp finish; Loop in place to cause the bootloader to hang
 
